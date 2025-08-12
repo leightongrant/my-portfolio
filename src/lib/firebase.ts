@@ -22,7 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 
 // Caching for auth instance to avoid re-initialization
-let authInstance
+let authInstance: import('firebase/auth').Auth | undefined
 const getAuthInstance = async () => {
 	if (!authInstance) {
 		const { getAuth } = await import('firebase/auth')
@@ -35,17 +35,20 @@ const getAuthInstance = async () => {
 const db = getFirestore(app)
 
 // Functions
+type Project = {
+	id: string
+	title: string
+	img_url: string
+	description: string
+	about: string
+	app_url: string
+	repo_url: string
+}
 
-/**
- * Get all Documents from firestore
- *
- * @async
- * @returns {Promise<Array|null>}
- */
 async function getProjects() {
 	try {
 		const projects = await getDocs(collection(db, 'projects'))
-		const data = []
+		const data: Project[] = []
 		projects.forEach(doc => {
 			data.push({
 				id: doc.id,
@@ -65,46 +68,27 @@ async function getProjects() {
 	}
 }
 
-/**
- * Get a project by project id
- *
- * @async
- * @param {string} id - projectId
- * @returns {Promise<Object|null>}
- */
-async function getProject(id) {
+async function getProject(id: string) {
 	try {
 		const docRef = doc(db, 'projects', id)
 		const document = await getDoc(docRef)
-		return {
+		const project: Project = {
 			id: document.id,
-			title: document.data().title,
-			img_url: document.data().img_url,
-			description: document.data().description,
-			about: document.data().about,
-			app_url: document.data().app_url,
-			repo_url: document.data().repo_url,
+			title: document.data()?.title,
+			img_url: document.data()?.img_url,
+			description: document.data()?.description,
+			about: document.data()?.about,
+			app_url: document.data()?.app_url,
+			repo_url: document.data()?.repo_url,
 		}
+		return project
 	} catch (error) {
 		console.log(error)
 		return null
 	}
 }
 
-/**
- * function to add a new document to firestore
- *
- * @async
- * @param {Object} document
- * @param {string} document.title
- * @param {string} document.img_url
- * @param {string} document.description
- * @param {string} document.about
- * @param {string} document.app_url
- * @param {string} document.repo_url
- * @returns {Promise<void>}
- */
-async function addProject(document) {
+async function addProject(document: Project) {
 	try {
 		const { addDoc } = await import('firebase/firestore')
 		return await addDoc(collection(db, 'projects'), document)
@@ -114,21 +98,7 @@ async function addProject(document) {
 	}
 }
 
-/**
- * Update a document on firestore
- *
- * @async
- * @param {string} id - project id
- * @param {Object} updatedDocument
- * @param {string} updatedDocument.title
- * @param {string} updatedDocument.img_url
- * @param {string} updatedDocument.description
- * @param {string} updatedDocument.about
- * @param {string} updatedDocument.app_url
- * @param {string} updatedDocument.repo_url
- * @returns {Promise<Object|null>}
- */
-async function updateProject(id, updatedDocument) {
+async function updateProject(id: string, updatedDocument: Project) {
 	try {
 		const { setDoc } = await import('firebase/firestore')
 		const docRef = doc(db, 'projects', id)
@@ -139,14 +109,7 @@ async function updateProject(id, updatedDocument) {
 	}
 }
 
-/**
- * Delete a document from firestore
- *
- * @async
- * @param {string} id - project id
- * @returns {Promise<void>}
- */
-async function deleteProject(id) {
+async function deleteProject(id: string) {
 	try {
 		const { deleteDoc } = await import('firebase/firestore')
 		const docRef = doc(db, 'projects', id)
@@ -156,7 +119,7 @@ async function deleteProject(id) {
 	}
 }
 
-async function logIn(email, password) {
+async function logIn(email: string, password: string) {
 	try {
 		const auth = await getAuthInstance()
 		const { signInWithEmailAndPassword } = await import('firebase/auth')
@@ -177,7 +140,7 @@ async function logOut() {
 	}
 }
 
-async function getUser(setUser) {
+async function getUser(setUser: any) {
 	const auth = await getAuthInstance()
 	const { onAuthStateChanged } = await import('firebase/auth')
 	onAuthStateChanged(auth, user => {

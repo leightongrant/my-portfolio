@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react'
 
-/**
- * A custom hook to fetch data from Firestore and handle loading/error states.
- * @param {Function} queryFn - The async function that performs the Firestore query.
- * @param {Array} deps - The dependency array for the useEffect hook.
- * @returns {{data: any, error: string|null, loading: boolean}}
- */
-export function useFirestoreQuery(queryFn, deps = []) {
-	const [data, setData] = useState(null)
-	const [error, setError] = useState(null)
-	const [loading, setLoading] = useState(true)
+interface FirestoreQueryResult<T> {
+	data: T | null
+	error: string | null
+	loading: boolean
+}
+
+type QueryFn<T> = () => Promise<T>
+
+export function useFirestoreQuery<T>(
+	queryFn: QueryFn<T>,
+	deps: any[] = []
+): FirestoreQueryResult<T> {
+	const [data, setData] = useState<T | null>(null)
+	const [error, setError] = useState<string | null>(null)
+	const [loading, setLoading] = useState<boolean>(true)
 
 	useEffect(() => {
 		setLoading(true)
