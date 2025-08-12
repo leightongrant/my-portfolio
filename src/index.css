@@ -1,0 +1,251 @@
+:root {
+	--lg-dark: hsla(240, 15%, 19%, 1);
+	--lg-light: hsla(240, 15%, 95%, 1);
+	--lg-hover: hsla(240, 15%, 29%, 1);
+	--lg-active: hsla(221, 22%, 33%, 1);
+	--lg-accent: hsla(0, 6%, 78%, 1);
+
+	--lg-dark-50: hsla(240, 15%, 19%, 0.5);
+	--lg-dark-75: hsla(240, 15%, 19%, 0.75);
+	--lg-dark-25: hsla(240, 15%, 19%, 0.25);
+}
+body {
+	font-family: 'Lato', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 1.25em;
+}
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Young Serif', serif;
+	color: var(--lg-dark);
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 2.2em;
+	letter-spacing: 0.05em;
+}
+
+h2 {
+	font-size: 1.8em;
+	letter-spacing: 0.05em;
+}
+h3 {
+	font-size: 1.4em;
+	letter-spacing: 0.05em;
+}
+h4 {
+	font-size: 1.5em;
+	letter-spacing: 0.05em;
+}
+h5 {
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
+}
+h6 {
+	font-size: 1em;
+	letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+	h1 {
+		font-size: 2.8em;
+		letter-spacing: 0.05em;
+	}
+
+	h2 {
+		font-size: 2.2em;
+		letter-spacing: 0.05em;
+	}
+	h3 {
+		font-size: 1.8em;
+		letter-spacing: 0.05em;
+	}
+	h4 {
+		font-size: 1.5em;
+		letter-spacing: 0.05em;
+	}
+	h5 {
+		font-size: 1.2em;
+		letter-spacing: 0.05em;
+	}
+	h6 {
+		font-size: 1em;
+		letter-spacing: 0.05em;
+	}
+}
+
+/* Links */
+
+a {
+	color: var(--lg-dark);
+}
+a:hover {
+	color: var(--lg-hover);
+}
+
+/*Buttons*/
+.sign-in-btn:hover {
+	background-color: var(--lg-hover) !important;
+}
+.add-project-btn {
+	background-color: var(--lg-dark);
+	color: var(--lg-light);
+	border: none;
+}
+.add-project-btn:hover {
+	background-color: var(--lg-hover);
+	color: var(--lg-light);
+}
+
+/* Paddings */
+.section-padding {
+	padding: 4em 0;
+}
+.title-padding {
+	padding-bottom: 4.5rem;
+}
+.padding-lg {
+	padding-top: 8em;
+	padding-bottom: 8em;
+}
+
+.banner-padding {
+	padding: 2em 0;
+}
+.banner-title {
+	font-family: 'Young Serif', serif;
+}
+
+@media (min-width: 768px) {
+	.section-padding {
+		padding: 6em 0;
+	}
+	.title-padding {
+		padding-bottom: 7rem;
+	}
+}
+
+/* Nav */
+
+.nav-link.active,
+.nav-link:hover {
+	text-decoration-line: underline;
+	text-underline-offset: 5px;
+	text-decoration-thickness: 2px;
+	text-decoration-color: var(--lg-dark);
+}
+@media (min-width: 768px) {
+	.nav-link.active,
+	.nav-link:hover {
+		text-decoration-line: underline;
+		text-underline-offset: 21px;
+		text-decoration-thickness: 4px;
+		text-decoration-color: var(--lg-dark);
+	}
+}
+
+/* Login */
+.loginBtn,
+.logoutBtn:hover {
+	cursor: pointer;
+}
+
+/* Sections */
+
+/* Contact Form */
+.form-btn {
+	background-color: var(--lg-dark);
+	color: white;
+	text-transform: uppercase;
+}
+.form-btn:hover {
+	background-color: var(--lg-hover);
+	color: white;
+}
+
+.active-breadcrumb {
+	pointer-events: none;
+	color: gray;
+	text-decoration: none;
+}
+.breadcrumb {
+	font-size: 0.75em;
+	margin-bottom: 0 !important;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+	content: '▸' !important;
+}
+
+/* Projects */
+.project-card:hover {
+	transform: scale(1.05);
+	transition: all 0.5s ease-in-out;
+}
+.card-img-overlay {
+	background-color: rgba(0, 0, 0, 0.9);
+	border-radius: 0;
+	height: 50%;
+}
+.projectBtn {
+	background-color: var(--lg-dark);
+	color: var(--lg-light);
+}
+.projectBtn:hover {
+	background-color: var(--lg-hover);
+	color: var(--lg-light);
+}
+
+/* Hero */
+
+.btn-about:hover {
+	background-color: var(--lg-hover) !important;
+}
+
+/* Contact */
+.contact-social a {
+	font-size: 2em;
+}
+
+.contact-social a {
+	margin-left: 35px;
+}
+.contact-info {
+	color: #4a4e69;
+}
+.social-buttons {
+	font-size: 2em;
+	background-color: #22223b;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+}
+
+.contact-info .card {
+	border: none;
+	border-bottom: 10px solid #22223b;
+	border-radius: 5px;
+}
+
+#contact-details {
+	background-color: var(--lg-light);
+}
+
+/*Footer*/
+.footer-icon {
+	color: var(--lg-accent);
+}
+
+.footer-icon:hover {
+	color: var(--lg-light);
+}

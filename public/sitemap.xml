@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://leightongrant.me/</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://leightongrant.me/about</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://leightongrant.me/projects</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Example Project Detail Pages (Replace with your actual project URLs) -->
+  <url>
+    <loc>https://leightongrant.me/projects/readme-generator</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://leightongrant.me/projects/team-generator</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://leightongrant.me/projects/the-mixologist</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://leightongrant.me/projects/javascript-quiz</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://leightongrant.me/projects/console-finances</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://leightongrant.me/projects/password-generator</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://leightongrant.me/projects/workday-scheduler</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://leightongrant.me/projects/weather-dashboard</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+  <!-- Add more project URLs here -->
+
+  <url>
+    <loc>https://leightongrant.me/contact</loc>
+    <lastmod>2023-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+        <image:loc>https://leightongrant.me/og-image.webp</image:loc>
+        <image:caption>Leighton Grant Frontend Web Developer Portfolio</image:caption>
+    </image:image>
+  </url>
+</urlset>
