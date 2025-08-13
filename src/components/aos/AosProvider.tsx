@@ -1,7 +1,10 @@
 import AOS from 'aos'
-import { useEffect } from 'react'
-
-function AosProvider({ children }) {
+import React, { useEffect } from 'react'
+//Types
+type AosProps = {
+	children: React.ReactNode
+}
+function AosProvider({ children }: AosProps) {
 	useEffect(() => {
 		AOS.init({ duration: 1500, once: true })
 	}, [])

@@ -4,13 +4,6 @@ import { GitHub, LinkedIn, Email, Phone } from '../social'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
-/**
- * A footer component for the website.
- *
- * Displays the copyright year and a stack of social links.
- *
- * @returns {ReactElement} - The footer component.
- */
 const Footer = () => {
 	const year = new Date().getFullYear() ?? 2025
 

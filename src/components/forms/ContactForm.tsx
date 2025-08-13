@@ -3,43 +3,40 @@ import Form from 'react-bootstrap/Form'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
-/**
- * A component that renders a contact form with fields for name, email, and
- * message. The form is submitted to the root URL of the site.
- *
- * @return {ReactElement} A React component that renders a contact form.
- */
+
 const ContactForm = () => {
 	const navigate = useNavigate()
 	const [name, setName] = useState('')
 	const [email, setEmail] = useState('')
 	const [message, setMessage] = useState('')
 
-	/**
-	 * Submits the contact form to the root URL of the site.
-	 *
-	 * @function
-	 * @param {Event} e - The event that triggered the form submission.
-	 *
-	 * @returns {Promise<void>} - A promise that the form submission has been
-	 *   handled.
-	 */
-	function handleSubmit(e) {
-		e?.preventDefault()
+	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault()
 
 		try {
-			const myForm = e?.target
+			const myForm = e.target as HTMLFormElement
 			if (!myForm) {
 				throw new Error('No form found.')
 			}
 
 			const formData = new FormData(myForm)
-			const formDataString = new URLSearchParams(formData).toString()
+			const formValues = {
+				'form-name': formData.get('form-name'),
+				name: formData.get('name'),
+				email: formData.get('email'),
+				message: formData.get('message'),
+			}
+
+			const formDataString = new URLSearchParams(
+				formValues as Record<string, string>
+			)
 
 			fetch('/', {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: formDataString,
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+				},
+				body: formDataString.toString(),
 			})
 				.then(response => {
 					if (response.ok) {
@@ -53,12 +50,14 @@ const ContactForm = () => {
 					alert(error?.message)
 				})
 		} catch (error) {
-			console.error('Error:', error?.message)
-			alert(error?.message)
+			console.log(error)
+			alert(error)
 		}
 	}
 
-	const handleChange = e => {
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
 		const { name: inputName, value } = e.target
 		if (inputName === 'name') {
 			setName(value)
@@ -70,9 +69,18 @@ const ContactForm = () => {
 	}
 
 	return (
-		<Form name='contact' method='POST' onSubmit={handleSubmit}>
+		<Form
+			name='contact'
+			method='POST'
+			onSubmit={handleSubmit}
+			data-netlify={true}
+		>
 			<Stack gap={4}>
-				<input type='hidden' name='form-name' value='contact' />
+				<input
+					type='hidden'
+					name='form-name'
+					value='contact'
+				/>
 				<Form.Group controlId='name'>
 					<Form.Label>Name</Form.Label>
 					<Form.Control

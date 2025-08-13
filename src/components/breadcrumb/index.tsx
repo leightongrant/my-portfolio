@@ -33,7 +33,6 @@ const BreadcrumbItem = ({
 
 function Breadcrumbs({ pageTitle }: BreadcrumbProps) {
 	const path = useResolvedPath('').pathname
-	console.log(path)
 	const paths = path.split('/').filter(pth => pth)
 
 	const crumbs = paths.map((pth, i) => {
