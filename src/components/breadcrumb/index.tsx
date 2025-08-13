@@ -4,7 +4,21 @@ import { useResolvedPath } from 'react-router'
 import { GoHomeFill } from 'react-icons/go'
 import { Link } from 'react-router-dom'
 
-const BreadcrumbItem = ({ children, href, active }) => {
+// Types
+type BreadcrumbItemProps = {
+	children: React.ReactNode
+	href: string
+	active?: boolean
+}
+type BreadcrumbProps = {
+	pageTitle: string
+}
+
+const BreadcrumbItem = ({
+	children,
+	href,
+	active = false,
+}: BreadcrumbItemProps) => {
 	return (
 		<li className='breadcrumb-item'>
 			<Link
@@ -17,8 +31,9 @@ const BreadcrumbItem = ({ children, href, active }) => {
 	)
 }
 
-function Breadcrumbs({ pageTitle }) {
-	const path = useResolvedPath().pathname
+function Breadcrumbs({ pageTitle }: BreadcrumbProps) {
+	const path = useResolvedPath('').pathname
+	console.log(path)
 	const paths = path.split('/').filter(pth => pth)
 
 	const crumbs = paths.map((pth, i) => {
