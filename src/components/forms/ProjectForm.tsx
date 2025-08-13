@@ -1,7 +1,7 @@
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
 import { addProject, getProject, updateProject } from '../../lib/firebase'
@@ -37,7 +37,9 @@ const ProjectForm = () => {
 		}
 	}, [mode, projectId])
 
-	function handleChange(e) {
+	function handleChange(
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) {
 		const { value, id } = e.target
 		if (id === 'title') {
 			setFormData(stateObj => ({ ...stateObj, title: value }))
@@ -59,7 +61,7 @@ const ProjectForm = () => {
 		}
 	}
 
-	async function addDocument(e) {
+	async function addDocument(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault()
 		if (mode === 'addProject') {
 			addProject(formData)

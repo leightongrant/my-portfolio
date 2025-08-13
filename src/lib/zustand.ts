@@ -23,7 +23,7 @@ export const useModalStore = create<ModalStore>(set => ({
 
 interface ToastResult {
 	message: string
-	status: string
+	status: string | number
 }
 
 interface ToastStore {

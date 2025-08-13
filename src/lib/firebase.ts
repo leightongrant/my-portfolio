@@ -36,7 +36,7 @@ const db = getFirestore(app)
 
 // Functions
 type Project = {
-	id: string
+	id?: string
 	title: string
 	img_url: string
 	description: string
