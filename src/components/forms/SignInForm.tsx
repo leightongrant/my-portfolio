@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Stack from 'react-bootstrap/Stack'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Fade from 'react-bootstrap/Fade'
 import { useModalStore } from '../../lib/zustand.js'
 import { logIn } from '../../lib/firebase.js'
@@ -13,7 +13,7 @@ const SignInForm = () => {
 	const [error, setError] = useState('')
 	const closeModal = useModalStore(state => state.closeModal)
 
-	const handleLogin = async e => {
+	const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		const err = await logIn(email, password)
 		if (err) {
@@ -23,7 +23,7 @@ const SignInForm = () => {
 		}
 	}
 
-	const handleChange = e => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { type, value } = e.target
 		if (type === 'email') {
 			setEmail(value)
