@@ -1,16 +1,15 @@
 import logo from '../../assets/lg-logo.png'
 import SignIn from '../signin'
-import { useResolvedPath } from 'react-router'
+import { Link, useLocation } from 'react-router'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 import { HiMenu, HiOutlineX } from 'react-icons/hi'
-import { useRef, useState } from 'react'
-import { Link } from 'react-router'
+import { useRef, useState, useEffect } from 'react'
 
 const Header = () => {
-	const path = useResolvedPath('').pathname
+	const path = useLocation().pathname
 	const [expanded, setExpanded] = useState(false)
 
 	const navRef = useRef(null)
@@ -25,6 +24,10 @@ const Header = () => {
 		alignItems: 'center',
 		justifyContent: 'center',
 	}
+
+	useEffect(() => {
+		console.log(path)
+	}, [])
 
 	return (
 		<Navbar
