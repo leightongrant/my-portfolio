@@ -8,6 +8,8 @@ import {
 	doc,
 } from 'firebase/firestore'
 
+import type { Project } from '../types'
+
 const firebaseConfig = {
 	apiKey: import.meta.env.VITE_FIREBASE_APIKEY,
 	authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -35,15 +37,6 @@ const getAuthInstance = async () => {
 const db = getFirestore(app)
 
 // Functions
-type Project = {
-	id?: string
-	title: string
-	img_url: string
-	description: string
-	about: string
-	app_url: string
-	repo_url: string
-}
 
 async function getProjects() {
 	try {

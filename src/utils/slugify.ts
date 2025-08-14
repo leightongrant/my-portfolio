@@ -1,3 +1,3 @@
-export default function slugify(title) {
-  return title.toLowerCase().replaceAll(' ', '-')
+export default function slugify(title: string) {
+	return title.toLowerCase().replaceAll(' ', '-')
 }

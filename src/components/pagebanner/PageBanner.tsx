@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container'
 import Stack from 'react-bootstrap/Stack'
 
 type PageBannerProps = {
-	pageTitle: string
-	bannerBg: string
+	pageTitle?: string
+	bannerBg?: string
 }
 
 export default function PageBanner({ pageTitle, bannerBg }: PageBannerProps) {

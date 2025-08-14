@@ -8,21 +8,28 @@ function MainToast() {
 	const { show, closeToast, result } = useToastStore()
 
 	return (
-		<ToastContainer position='bottom-center' className='p-3'>
+		<ToastContainer
+			position='bottom-center'
+			className='p-3'
+		>
 			<Row>
 				<Col>
 					<Toast
-						onClose={() => closeToast(false)}
+						onClose={() => closeToast()}
 						show={show}
 						delay={5000}
 						autohide
 						className={`bg-dark ${
-							result.status === 'success' ? 'text-success' : 'text-danger'
+							result.status === 'success'
+								? 'text-success'
+								: 'text-danger'
 						}`}
 					>
 						<Toast.Header>
 							<strong className='me-auto'>
-								{result.status === 'success' ? 'Success' : 'Error'}
+								{result.status === 'success'
+									? 'Success'
+									: 'Error'}
 							</strong>
 						</Toast.Header>
 						<Toast.Body>{result.message}</Toast.Body>

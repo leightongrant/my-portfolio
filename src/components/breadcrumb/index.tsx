@@ -11,7 +11,7 @@ type BreadcrumbItemProps = {
 	active?: boolean
 }
 type BreadcrumbProps = {
-	pageTitle: string
+	pageTitle?: string
 }
 
 const BreadcrumbItem = ({

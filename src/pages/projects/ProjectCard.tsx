@@ -18,7 +18,7 @@ export const Confirm = () => {
 	const showToast = useToastStore(state => state.showToast)
 	const setResult = useToastStore(state => state.setResult)
 
-	async function handleDelete(id) {
+	async function handleDelete(id: string) {
 		deleteProject(id)
 			.then(() => {
 				setResult({
@@ -54,7 +54,23 @@ export const Confirm = () => {
 	)
 }
 
-function ProjectCard({ title, img, about, app_url, repo_url, id }) {
+interface ProjectCardProps {
+	title: string
+	img: string
+	about: string
+	app_url: string
+	repo_url: string
+	id: string
+}
+
+function ProjectCard({
+	title,
+	img,
+	about,
+	app_url,
+	repo_url,
+	id,
+}: ProjectCardProps) {
 	const navigate = useNavigate()
 	const user = useFirebaseStore(state => state.user)
 
@@ -68,7 +84,7 @@ function ProjectCard({ title, img, about, app_url, repo_url, id }) {
 		showModal()
 	}
 
-	async function handleEdit(_, id) {
+	async function handleEdit(_: any, id: string) {
 		setMode('editProject')
 		setProjectId(id)
 		showModal()

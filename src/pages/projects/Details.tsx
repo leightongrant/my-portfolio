@@ -9,8 +9,13 @@ import Col from 'react-bootstrap/Col'
 import Metadata from '../../metadata'
 import { useNavigate, Link } from 'react-router-dom'
 import slugify from '../../utils/slugify'
+import type { Project } from '../../types'
 
-const Details = ({ project }) => {
+interface DetailsProps {
+	project: Project
+}
+
+const Details = ({ project }: DetailsProps) => {
 	const navigate = useNavigate()
 
 	// The parent component now handles loading and error states.

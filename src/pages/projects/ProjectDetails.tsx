@@ -12,8 +12,11 @@ function ProjectDetails() {
 	const { slug } = useParams()
 
 	// The ID is the last part of the slug, after the last hyphen.
-	const id = slug.split('-').pop()
-
+	const id = slug?.split('-').pop()
+	if (!id) {
+		console.log('Slug Id not found')
+		return
+	}
 	const fetchProject = useCallback(async () => {
 		const projectData = await getProject(id)
 		if (!projectData) throw new Error('Project not found')
@@ -46,10 +49,15 @@ function ProjectDetails() {
 		)
 	}
 
+	if (!project) {
+		console.log('Error loading project')
+		return
+	}
+
 	return (
 		<>
-			<PageBanner pageTitle={project.title} />
-			<Breadcrumbs pageTitle={project.title} />
+			<PageBanner pageTitle={project?.title} />
+			<Breadcrumbs pageTitle={project?.title} />
 			<Suspense fallback={<Loading />}>
 				<Details project={project} />
 			</Suspense>

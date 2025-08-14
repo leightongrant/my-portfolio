@@ -59,6 +59,10 @@ const BootcampProjects = () => {
 					{firestoreData?.map(project => {
 						const { title, img_url, about, app_url, repo_url, id } =
 							project
+						if (!id) {
+							console.log('Id not found')
+							return
+						}
 						return (
 							<ProjectCard
 								title={title}
