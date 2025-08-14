@@ -7,7 +7,7 @@ import { useFirebaseStore, useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
 import { getProjects } from '../../lib/firebase'
 import { useFirestoreQuery } from '../../hooks/useFirestoreQuery'
-import { lazy } from 'react'
+import { lazy, Suspense } from 'react'
 
 const ServerError = lazy(() =>
 	import('../../components/placeholders/ServerError').then(module => ({
@@ -38,11 +38,19 @@ const BootcampProjects = () => {
 	} = useFirestoreQuery(getProjects, [result])
 
 	if (error) {
-		return <ServerError />
+		return (
+			<Suspense fallback={null}>
+				<ServerError />
+			</Suspense>
+		)
 	}
 
 	if (loading) {
-		return <ProjectsSkeleton />
+		return (
+			<Suspense fallback={null}>
+				<ProjectsSkeleton />
+			</Suspense>
+		)
 	}
 
 	return (

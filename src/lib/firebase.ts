@@ -1,13 +1,5 @@
 import { initializeApp } from 'firebase/app'
-
-import {
-	getFirestore,
-	collection,
-	getDocs,
-	getDoc,
-	doc,
-} from 'firebase/firestore'
-
+import { getFirestore } from 'firebase/firestore'
 import type { Project } from '../types'
 
 const firebaseConfig = {
@@ -37,9 +29,9 @@ const getAuthInstance = async () => {
 const db = getFirestore(app)
 
 // Functions
-
 async function getProjects() {
 	try {
+		const { collection, getDocs } = await import('firebase/firestore')
 		const projects = await getDocs(collection(db, 'projects'))
 		const data: Project[] = []
 		projects.forEach(doc => {
@@ -63,6 +55,7 @@ async function getProjects() {
 
 async function getProject(id: string) {
 	try {
+		const { getDoc, doc } = await import('firebase/firestore')
 		const docRef = doc(db, 'projects', id)
 		const document = await getDoc(docRef)
 		const project: Project = {
@@ -83,7 +76,7 @@ async function getProject(id: string) {
 
 async function addProject(document: Project) {
 	try {
-		const { addDoc } = await import('firebase/firestore')
+		const { addDoc, collection } = await import('firebase/firestore')
 		return await addDoc(collection(db, 'projects'), document)
 	} catch (error) {
 		console.log(error)
@@ -93,7 +86,7 @@ async function addProject(document: Project) {
 
 async function updateProject(id: string, updatedDocument: Project) {
 	try {
-		const { setDoc } = await import('firebase/firestore')
+		const { setDoc, doc } = await import('firebase/firestore')
 		const docRef = doc(db, 'projects', id)
 		return await setDoc(docRef, updatedDocument)
 	} catch (error) {
@@ -104,7 +97,7 @@ async function updateProject(id: string, updatedDocument: Project) {
 
 async function deleteProject(id: string) {
 	try {
-		const { deleteDoc } = await import('firebase/firestore')
+		const { deleteDoc, doc } = await import('firebase/firestore')
 		const docRef = doc(db, 'projects', id)
 		await deleteDoc(docRef)
 	} catch (error) {
