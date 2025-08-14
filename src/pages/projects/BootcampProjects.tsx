@@ -1,4 +1,4 @@
-import { ProjectCard } from './ProjectCard'
+// import { ProjectCard } from './ProjectCard'
 import { Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
 import { MdAdd } from 'react-icons/md'
@@ -18,6 +18,10 @@ const ProjectsSkeleton = lazy(() =>
 	import('../../components/placeholders/ProjectsSkeleton').then(module => ({
 		default: module.ProjectsSkeleton,
 	}))
+)
+
+const ProjectCard = lazy(() =>
+	import('./ProjectCard').then(module => ({ default: module.ProjectCard }))
 )
 
 const BootcampProjects = () => {
@@ -83,15 +87,17 @@ const BootcampProjects = () => {
 							return
 						}
 						return (
-							<ProjectCard
-								title={title}
-								img={img_url}
-								about={about}
-								app_url={app_url}
-								repo_url={repo_url}
-								key={id}
-								id={id}
-							/>
+							<Suspense fallback={null}>
+								<ProjectCard
+									title={title}
+									img={img_url}
+									about={about}
+									app_url={app_url}
+									repo_url={repo_url}
+									key={id}
+									id={id}
+								/>
+							</Suspense>
 						)
 					})}
 				</Row>
