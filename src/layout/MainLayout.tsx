@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom'
 import Footer from '../components/footer/Footer'
 import { lazy } from 'react'
-import Header from '../components/header'
+import Header from '../components/header/Header'
 
-const MainModal = lazy(() => import('../components/modals'))
-const MainToast = lazy(() => import('../components/toasts'))
+const MainModal = lazy(() => import('../components/modals/Modals'))
+const MainToast = lazy(() => import('../components/toasts/Toasts'))
 
 function MainLayout() {
 	return (

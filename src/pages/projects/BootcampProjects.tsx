@@ -1,7 +1,10 @@
 import { ProjectCard } from './ProjectCard'
 import { Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
-import { ServerError, ProjectsSkeleton } from '../../components/placeholders'
+import {
+	ServerError,
+	ProjectsSkeleton,
+} from '../../components/placeholders/PlaceHolders'
 import { MdAdd } from 'react-icons/md'
 import Button from 'react-bootstrap/Button'
 import { useFirebaseStore, useModalStore } from '../../lib/zustand'

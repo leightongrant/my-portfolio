@@ -5,9 +5,14 @@ import ContactForm from '../../components/forms/ContactForm'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Stack } from 'react-bootstrap'
-import { GitHub, LinkedIn, Email, Phone } from '../../components/social'
-import Breadcrumbs from '../../components/breadcrumb'
-import Metadata from '../../metadata'
+import {
+	GitHub,
+	LinkedIn,
+	Email,
+	Phone,
+} from '../../components/social/SocialLinks'
+import Breadcrumbs from '../../components/breadcrumb/breadcrumb'
+import Metadata from '../../metadata/SiteMetadata'
 
 const Contact = () => {
 	return (
@@ -20,7 +25,10 @@ const Contact = () => {
 				image='https://leightongrant.me/og-image.webp'
 				imageAlt='Leighton Grant Portfolio'
 			/>
-			<PageBanner pageTitle='Contact Me' bannerBg={bg} />
+			<PageBanner
+				pageTitle='Contact Me'
+				bannerBg={bg}
+			/>
 			<Breadcrumbs />
 			<main className='section-padding px-3'>
 				<Container>
@@ -28,15 +36,22 @@ const Contact = () => {
 						<Col>
 							<Container>
 								<Stack gap={4}>
-									<h1 className='fs-2'>Send Me a Message or Inquiry</h1>
+									<h1 className='fs-2'>
+										Send Me a Message or Inquiry
+									</h1>
 									<ContactForm />
 								</Stack>
 							</Container>
 						</Col>
 						<Col>
 							<Container>
-								<Stack gap={4} className='d-inline-flex'>
-									<h2 className='fs-2'>Social & Professional Links</h2>
+								<Stack
+									gap={4}
+									className='d-inline-flex'
+								>
+									<h2 className='fs-2'>
+										Social & Professional Links
+									</h2>
 									<Stack gap={2}>
 										<GitHub className='contact-icon fs-3 link-underline link-underline-opacity-0'>
 											github.com/leightongrant

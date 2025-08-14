@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container'
 import Stack from 'react-bootstrap/Stack'
-import { GitHub, LinkedIn, Email, Phone } from '../social'
+import { GitHub, LinkedIn, Email, Phone } from '../social/SocialLinks'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 

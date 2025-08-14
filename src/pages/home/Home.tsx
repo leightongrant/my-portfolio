@@ -1,5 +1,5 @@
 import Hero from '../../components/hero/Hero'
-import Metadata from '../../metadata'
+import Metadata from '../../metadata/SiteMetadata'
 const Home = () => {
 	return (
 		<>

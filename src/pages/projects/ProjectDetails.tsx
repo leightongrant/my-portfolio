@@ -1,8 +1,11 @@
 import { useParams } from 'react-router'
 import PageBanner from '../../components/pagebanner/PageBanner'
-import Breadcrumbs from '../../components/breadcrumb'
+import Breadcrumbs from '../../components/breadcrumb/breadcrumb'
 import { lazy, Suspense, useCallback } from 'react'
-import { Loading, ServerError } from '../../components/placeholders'
+import {
+	Loading,
+	ServerError,
+} from '../../components/placeholders/PlaceHolders'
 import { getProject } from '../../lib/firebase'
 import { useFirestoreQuery } from '../../hooks/useFirestoreQuery'
 

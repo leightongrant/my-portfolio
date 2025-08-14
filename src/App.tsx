@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/home/Home.js'
 import { lazy } from 'react'
-import MainLayout from './layout/index.js'
+import MainLayout from './layout/MainLayout.js'
 import { useFirebaseStore } from './lib/zustand.js'
 import { getUser } from './lib/firebase.js'
 

@@ -1,7 +1,7 @@
 import PageBanner from '../../components/pagebanner/PageBanner'
 import bg from '../../assets/projects-bg.webp'
-import Breadcrumbs from '../../components/breadcrumb'
-import Metadata from '../../metadata'
+import Breadcrumbs from '../../components/breadcrumb/breadcrumb'
+import Metadata from '../../metadata/SiteMetadata'
 import { lazy } from 'react'
 const BootcampProjects = lazy(() => import('./BootcampProjects'))
 
@@ -16,7 +16,10 @@ const Projects = () => {
 				image='https://leightongrant.me/og-image.webp'
 				imageAlt='Leighton Grant Portfolio'
 			/>
-			<PageBanner pageTitle='My Projects' bannerBg={bg} />
+			<PageBanner
+				pageTitle='My Projects'
+				bannerBg={bg}
+			/>
 			<Breadcrumbs />
 			<BootcampProjects />
 		</>
