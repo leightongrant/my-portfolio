@@ -1,6 +1,6 @@
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Container from 'react-bootstrap/Container'
-import { useResolvedPath } from 'react-router'
+import { useLocation } from 'react-router'
 import { GoHomeFill } from 'react-icons/go'
 import { Link } from 'react-router-dom'
 
@@ -32,7 +32,7 @@ const BreadcrumbItem = ({
 }
 
 function Breadcrumbs({ pageTitle }: BreadcrumbProps) {
-	const path = useResolvedPath('').pathname
+	const path = useLocation().pathname
 	const paths = path.split('/').filter(pth => pth)
 
 	const crumbs = paths.map((pth, i) => {
