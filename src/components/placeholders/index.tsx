@@ -2,7 +2,6 @@ import { LuServerOff } from 'react-icons/lu'
 import Container from 'react-bootstrap/Container'
 import Spinner from 'react-bootstrap/Spinner'
 import Row from 'react-bootstrap/Row'
-import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Placeholder from 'react-bootstrap/Placeholder'
 import Col from 'react-bootstrap/Col'
@@ -17,7 +16,8 @@ export const ServerError = () => {
 						style={{ textWrap: 'balance' }}
 						className='text-center display-6 fs-6'
 					>
-						There was a problem with the server. Please try again later.
+						There was a problem with the server. Please try again
+						later.
 					</h6>
 				</Row>
 			</Container>
@@ -30,7 +30,10 @@ export const Loading = () => {
 		<section className='section-padding'>
 			<Container>
 				<Row className='align-items-center justify-content-center'>
-					<Spinner animation='border' variant='secondary' />
+					<Spinner
+						animation='border'
+						variant='secondary'
+					/>
 				</Row>
 			</Container>
 		</section>
@@ -46,15 +49,26 @@ export function ProjectsSkeleton() {
 						<Col key={index}>
 							<Card>
 								<Card.Body>
-									<Placeholder as={Card.Title} animation='glow'>
+									<Placeholder
+										as={Card.Title}
+										animation='glow'
+									>
 										<Placeholder xs={6} />
 									</Placeholder>
-									<Placeholder as={Card.Text} animation='glow'>
-										<Placeholder xs={7} /> <Placeholder xs={4} />{' '}
-										<Placeholder xs={4} /> <Placeholder xs={6} />{' '}
+									<Placeholder
+										as={Card.Text}
+										animation='glow'
+									>
+										<Placeholder xs={7} />{' '}
+										<Placeholder xs={4} />{' '}
+										<Placeholder xs={4} />{' '}
+										<Placeholder xs={6} />{' '}
 										<Placeholder xs={8} />
 									</Placeholder>
-									<Placeholder.Button variant='secondary' xs={6} />
+									<Placeholder.Button
+										variant='secondary'
+										xs={6}
+									/>
 								</Card.Body>
 							</Card>
 						</Col>

@@ -8,8 +8,15 @@ import { useFirebaseStore } from '../../lib/zustand.js'
 import { BiSolidUser } from 'react-icons/bi'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { logOut } from '../../lib/firebase.js'
+import type React from 'react'
 
-function UserMenu({ children, user }) {
+// Types
+type UserMenuProps = {
+	children: React.ReactNode
+	user: any
+}
+
+function UserMenu({ children, user }: UserMenuProps) {
 	let { email } = user
 	return (
 		<Dropdown align={{ md: 'end' }}>
@@ -39,7 +46,7 @@ const SignIn = () => {
 		showModal()
 	}
 
-	const renderTooltip = props => (
+	const renderTooltip = (props: any) => (
 		<Tooltip
 			id='tooltip'
 			{...props}
