@@ -1,15 +1,12 @@
 import Container from 'react-bootstrap/Container'
 import Stack from 'react-bootstrap/Stack'
-/**
- * PageBanner renders a banner with a title and background image.
- *
- * @param {{ pageTitle: string, bannerBg: string }} props
- * @prop {string} [pageTitle] Title to render in the banner. If not provided, no title is rendered.
- * @prop {string} [bannerBg] URL of the background image for the banner. If not provided,
- * a default gradient is used.
- * @returns {JSX.Element}
- */
-export default function PageBanner({ pageTitle, bannerBg }) {
+
+type PageBannerProps = {
+	pageTitle: string
+	bannerBg: string
+}
+
+export default function PageBanner({ pageTitle, bannerBg }: PageBannerProps) {
 	const bgImage = {
 		backgroundImage: bannerBg
 			? `url(${bannerBg})`
@@ -23,7 +20,10 @@ export default function PageBanner({ pageTitle, bannerBg }) {
 	}
 	return (
 		<Stack style={bgImage}>
-			<Stack className='banner-padding' style={overlay}>
+			<Stack
+				className='banner-padding'
+				style={overlay}
+			>
 				<Container>
 					<div className='display-4 text-light text-capitalize banner-title'>
 						{pageTitle ? pageTitle : ''}
