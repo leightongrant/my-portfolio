@@ -8,10 +8,9 @@ import Image from 'react-bootstrap/Image'
 import { HiMenu, HiOutlineX } from 'react-icons/hi'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router'
-import { SiTrueup } from 'react-icons/si'
 
 const Header = () => {
-	const path = useResolvedPath().pathname
+	const path = useResolvedPath('').pathname
 	const [expanded, setExpanded] = useState(false)
 
 	const navRef = useRef(null)
@@ -43,7 +42,10 @@ const Header = () => {
 		>
 			<Container fluid>
 				<Navbar.Brand>
-					<Link to='/' onClick={() => setExpanded(false)}>
+					<Link
+						to='/'
+						onClick={() => setExpanded(false)}
+					>
 						<Image
 							src={logo}
 							width={53}
@@ -78,7 +80,9 @@ const Header = () => {
 						</Link>
 						<Link
 							to='/about'
-							className={`nav-link ${/about/.test(path) && 'active'}`}
+							className={`nav-link ${
+								/about/.test(path) && 'active'
+							}`}
 							onClick={() => setExpanded(false)}
 						>
 							About
@@ -86,7 +90,9 @@ const Header = () => {
 
 						<Link
 							to='/projects'
-							className={`nav-link ${/projects/.test(path) && 'active'}`}
+							className={`nav-link ${
+								/projects/.test(path) && 'active'
+							}`}
 							onClick={() => setExpanded(false)}
 						>
 							Projects
@@ -94,7 +100,9 @@ const Header = () => {
 
 						<Link
 							to='/contact'
-							className={`nav-link ${/contact/.test(path) && 'active'}`}
+							className={`nav-link ${
+								/contact/.test(path) && 'active'
+							}`}
 							onClick={() => setExpanded(false)}
 						>
 							Contact
