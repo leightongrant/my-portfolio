@@ -74,6 +74,7 @@ const ContactForm = () => {
 			method='POST'
 			onSubmit={handleSubmit}
 			data-netlify={true}
+			netlify-honeypot='bot-field'
 		>
 			<Stack gap={4}>
 				<input
