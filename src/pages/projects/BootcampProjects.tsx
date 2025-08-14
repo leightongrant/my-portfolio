@@ -1,16 +1,24 @@
 import { ProjectCard } from './ProjectCard'
 import { Row } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container'
-import {
-	ServerError,
-	ProjectsSkeleton,
-} from '../../components/placeholders/PlaceHolders'
 import { MdAdd } from 'react-icons/md'
 import Button from 'react-bootstrap/Button'
 import { useFirebaseStore, useModalStore } from '../../lib/zustand'
 import { useToastStore } from '../../lib/zustand'
 import { getProjects } from '../../lib/firebase'
 import { useFirestoreQuery } from '../../hooks/useFirestoreQuery'
+import { lazy } from 'react'
+
+const ServerError = lazy(() =>
+	import('../../components/placeholders/ServerError').then(module => ({
+		default: module.ServerError,
+	}))
+)
+const ProjectsSkeleton = lazy(() =>
+	import('../../components/placeholders/ProjectsSkeleton').then(module => ({
+		default: module.ProjectsSkeleton,
+	}))
+)
 
 const BootcampProjects = () => {
 	const showModal = useModalStore(state => state.showModal)

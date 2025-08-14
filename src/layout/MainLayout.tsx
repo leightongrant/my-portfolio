@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom'
-import Footer from '../components/footer/Footer'
-import { lazy } from 'react'
-import Header from '../components/header/Header'
+import { lazy, Suspense } from 'react'
 
 const MainModal = lazy(() => import('../components/modals/Modals'))
 const MainToast = lazy(() => import('../components/toasts/Toasts'))
+const Footer = lazy(() => import('../components/footer/Footer'))
+const Header = lazy(() => import('../components/header/Header'))
 
 function MainLayout() {
 	return (
@@ -20,10 +20,15 @@ function MainLayout() {
 				<div>
 					<Outlet />
 				</div>
+
 				<Footer />
 			</div>
-			<MainModal />
-			<MainToast />
+			<Suspense fallback={<p>...Loading</p>}>
+				<MainModal />
+			</Suspense>
+			<Suspense fallback={<p>...Loading</p>}>
+				<MainToast />
+			</Suspense>
 		</>
 	)
 }

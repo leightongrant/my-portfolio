@@ -2,14 +2,20 @@ import { useParams } from 'react-router'
 import PageBanner from '../../components/pagebanner/PageBanner'
 import Breadcrumbs from '../../components/breadcrumb/breadcrumb'
 import { lazy, Suspense, useCallback } from 'react'
-import {
-	Loading,
-	ServerError,
-} from '../../components/placeholders/PlaceHolders'
 import { getProject } from '../../lib/firebase'
 import { useFirestoreQuery } from '../../hooks/useFirestoreQuery'
 
 const Details = lazy(() => import('./Details'))
+const Loading = lazy(() =>
+	import('../../components/placeholders/Loading').then(module => ({
+		default: module.Loading,
+	}))
+)
+const ServerError = lazy(() =>
+	import('../../components/placeholders/ServerError').then(module => ({
+		default: module.ServerError,
+	}))
+)
 
 function ProjectDetails() {
 	const { slug } = useParams()
