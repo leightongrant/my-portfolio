@@ -1,69 +1,82 @@
-# React + TypeScript + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio Screenshot](screenshot.png)
 
-Currently, two official plugins are available:
+This is my personal portfolio website, built with modern web technologies to showcase my skills, projects, and experience as a software engineer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live Demo:** [your-portfolio-url.com](https://leightongrant.me)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   **Responsive Design:** Looks great on all devices, from mobile phones to desktops.
+-   **Project Showcase:** A dedicated section to display my work with details, links, and images.
+-   **About Me:** A section to introduce myself, my background, and my passion for development.
+-   **Skills Section:** Highlighting my technical skills and proficiencies.
+-   **Contact Form:** A functional contact form for visitors to get in touch.
+-   **Fast & Performant:** Optimized for a smooth and fast user experience.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+This project is built using the following technologies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
+-   **[TypeScript](https://www.typescriptlang.org/)**: A typed superset of JavaScript that compiles to plain JavaScript.
+-   **[React Bootstrap](https://react-bootstrap.github.io/)**: For styling the application.
+-   **[Vite](https://vitejs.dev/)**: For project setup and development server.
+-   **[Netlify](https://www.netlify.com/)**: For continuous deployment and hosting.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To get a local copy up and running, follow these simple steps.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
+
+You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/)installed on your machine.
+
+### Installation
+
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/leightongrant/my-portfolio.git
+    ```
+2.  Navigate to the project directory
+    ```sh
+    cd my-portfolio
+    ```
+3.  Install NPM packages
+    ```sh
+    npm install
+    ```
+
+## 📜 Available Scripts
+
+In the project directory, you can run:
+
+### `npm dev`
+
+Runs the app in development mode.\
+Open http://localhost:5713 (or another port, check your console) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm run build`
+
+Builds the app for production to the `build` or `dist` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include hashes for caching.\
+Your app is ready to be deployed!
+
+## 部署 (Deployment)
+
+This site is automatically deployed to Netlify from the `main` branch. Any push to `main` will trigger a new build and deployment.
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+## 🙏 Acknowledgements
+
+-   README.so for the template inspiration.
+-   Icons from React Icons.
