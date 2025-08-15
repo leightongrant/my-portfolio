@@ -1,24 +1,30 @@
 import { BsArrowLeft } from 'react-icons/bs'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
+import Stack from 'react-bootstrap/Stack'
+import { Link } from 'react-router'
 
 function Thanks() {
 	return (
-		<div
-			className='thanks-page vh-100 d-flex align-items-center'
-			style={{ backgroundColor: '#e8e7e6' }}
-		>
-			<div className='container d-flex align-items-center justify-content-around'>
-				<div className='card shadow' style={{ width: '24rem' }}>
+		<Container className='h-100'>
+			<Stack className='h-100 align-items-center justify-content-center'>
+				<Card className='shadow p-5'>
 					<div className='card-body'>
-						<h4 className='text-dark'>Thank You</h4>
-						<p>Your message has been received!</p>
+						<h4 className='text-dark text-center'>Thank You</h4>
+						<p className='text-center'>
+							Your message has been received!
+						</p>
 
-						<a href='/'>
+						<Link
+							to={{ pathname: '/projects' }}
+							className='fs-6 text-decoration-none d-flex justify-content-center align-items-center gap-2'
+						>
 							<BsArrowLeft /> Back to my portfolio
-						</a>
+						</Link>
 					</div>
-				</div>
-			</div>
-		</div>
+				</Card>
+			</Stack>
+		</Container>
 	)
 }
 
