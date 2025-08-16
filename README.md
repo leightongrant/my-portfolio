@@ -1,5 +1,6 @@
 # My Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/354cf308-3c60-4f76-9e08-673c3afbaad7/deploy-status)](https://app.netlify.com/projects/leightongrant/deploys)
 ![Portfolio Screenshot](screenshot.png)
 
 This is my personal portfolio website, built with modern web technologies to showcase my skills, projects, and experience as a software engineer.
