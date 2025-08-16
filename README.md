@@ -69,7 +69,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include hashes for caching.\
 Your app is ready to be deployed!
 
-## 部署 (Deployment)
+## (Deployment)
 
 This site is automatically deployed to Netlify from the `main` branch. Any push to `main` will trigger a new build and deployment.
 
